@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard | Career Advisor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<style>
+
+body{
+font-family:'Poppins',sans-serif;
+background:#eef2f7;
+margin:0;
+display:flex;
+min-height:100vh;
+}
+
+/* SIDEBAR */
+
+.navbar{
+width:230px;
+background:white;
+padding:30px 20px;
+box-shadow:2px 0 12px rgba(0,0,0,0.08);
+display:flex;
+flex-direction:column;
+}
+
+.nav-logo{
+font-size:1.7rem;
+font-weight:700;
+color:#3f51b5;
+text-align:center;
+margin-bottom:25px;
+}
+
+/* NAV LINKS */
+
+.nav-links{
+list-style:none;
+padding:0;
+display:flex;
+flex-direction:column;
+gap:8px;
+}
+
+.nav-links li a{
+text-decoration:none;
+color:#333;
+font-weight:500;
+padding:12px 15px;
+border-radius:8px;
+display:flex;
+align-items:center;
+gap:10px;
+transition:all 0.25s;
+}
+
+.nav-links li a:hover{
+background:#2fb4c2;
+color:white;
+}
+
+.nav-links li a.logout{
+margin-top:20px;
+background:#ff8a65;
+color:white;
+}
+
+.nav-links li a.logout:hover{
+background:#ff7043;
+}
+
+/* MAIN AREA */
+
+.dashboard-main{
+flex:1;
+padding:40px;
+}
+
+.dashboard-main h2{
+color:#3f51b5;
+margin-bottom:10px;
+}
+
+.dashboard-desc{
+color:#555;
+margin-bottom:30px;
+}
+
+/* CARDS */
+
+.usage-cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.usage-card{
+background:white;
+padding:22px;
+border-radius:12px;
+text-decoration:none;
+color:#333;
+box-shadow:0 6px 15px rgba(0,0,0,0.08);
+transition:all 0.25s;
+}
+
+.usage-card:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 22px rgba(0,0,0,0.15);
+}
+
+.usage-card h3{
+color:#3f51b5;
+margin-bottom:10px;
+font-size:1.2rem;
+}
+
+.usage-card p{
+font-size:0.95rem;
+color:#555;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+body{
+flex-direction:column;
+}
+
+.navbar{
+width:100%;
+flex-direction:row;
+overflow-x:auto;
+gap:10px;
+}
+
+.nav-links{
+flex-direction:row;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<nav class="navbar">
+
+<div class="nav-logo">CareerAdvisor</div>
+
+<ul class="nav-links">
+
+<li><a href="/quiz"><i class="fa-solid fa-user-graduate"></i> Career</a></li>
+
+<li><a href="/recommendation"><i class="fa-solid fa-book"></i> Course</a></li>
+
+<li><a href="/nearby_colleges"><i class="fa-solid fa-school"></i> College</a></li>
+
+<li><a href="/city_colleges"><i class="fa-solid fa-city"></i> TN Colleges</a></li>
+
+<li><a href="/skills"><i class="fa-solid fa-screwdriver-wrench"></i> Skill</a></li>
+
+<li><a href="/help"><i class="fa-solid fa-circle-question"></i> Help</a></li>
+
+<li><a href="/logout" class="logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+
+</ul>
+
+</nav>
+
+<!-- MAIN CONTENT -->
+
+<div class="dashboard-main">
+
+<h2>Welcome to Your Career Dashboard</h2>
+
+<p class="dashboard-desc">
+This platform helps students choose the right academic stream,
+degree course, nearby government colleges, and required skills
+based on their interests and goals.
+</p>
+
+<div class="usage-cards">
+
+<a href="/quiz" class="usage-card">
+<h3>🎯 Career Assessment</h3>
+<p>Take an interest-based quiz to identify the best stream.</p>
+</a>
+
+<a href="/recommendation" class="usage-card">
+<h3>📘 Course Recommendation</h3>
+<p>Get personalized course suggestions.</p>
+</a>
+
+<a href="/nearby_colleges" class="usage-card">
+<h3>🏫 Nearby Colleges</h3>
+<p>Find government colleges in your district.</p>
+</a>
+
+<a href="/skills" class="usage-card">
+<h3>🛠 Skill Guidance</h3>
+<p>Learn skills required for your career.</p>
+</a>
+
+<a href="/city_colleges" class="usage-card">
+<h3>🌆 Colleges in Tamil Nadu</h3>
+<p>Browse colleges and courses city-wise across Tamil Nadu.</p>
+</a>
+
+<a href="/help" class="usage-card">
+<h3>❓ Help & Support</h3>
+<p>Get guidance and support.</p>
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>

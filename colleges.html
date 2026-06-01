@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nearby Colleges | Career Advisor</title>
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: #eef2f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #3f51b5; /* primary color */
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Search Bar */
+        #collegeSearch {
+            display: block;
+            margin: 0 auto 30px auto;
+            padding: 12px 16px;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 0.95rem;
+        }
+
+        .download-section {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .download-btn {
+            background: #2fb4c2;
+            color: white;
+            padding: 10px 18px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .download-btn:hover {
+            background: #288697;
+            transform: translateY(-2px);
+        }
+
+        .college-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 18px;
+        }
+
+        .college-card {
+            background: #fff;
+            padding: 18px 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .college-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .college-card h3 {
+            margin: 0 0 10px;
+            color: #3f51b5;
+        }
+
+        .college-card p {
+            margin: 5px 0;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .college-card a {
+            color: #2fb4c2;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .college-card a:hover {
+            text-decoration: underline;
+        }
+
+        .no-data {
+            text-align: center;
+            margin-top: 40px;
+            color: #777;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+            .download-btn {
+                padding: 8px 14px;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Nearby Colleges</h1>
+</header>
+
+<main>
+    <h2>Colleges in {{ district }}</h2>
+
+    <!-- Search Bar -->
+    <input type="text" id="collegeSearch" placeholder="Search College by Name...">
+
+    {% if csv_file %}
+    <div class="download-section">
+        <a href="{{ url_for('download_csv', filename=csv_file) }}" class="download-btn">
+            ⬇ Download Full College List
+        </a>
+    </div>
+    {% endif %}
+
+    {% if colleges %}
+    <div class="college-grid" id="collegeGrid">
+        {% for college in colleges %}
+        <div class="college-card">
+            <div class="college-info">
+                <h3>{{ college.college_name }}</h3>
+                <p><strong>City:</strong> {{ college.city }}</p>
+
+                {% if college.website %}
+                    <p>
+                        <a href="{{ college.website }}" target="_blank">Visit Website</a> | 
+                        <a href="https://www.google.com/maps/search/{{ college.college_name | urlencode }}+{{ college.city | urlencode }}" target="_blank">Map View</a>
+                    </p>
+                {% else %}
+                    <p>
+                        Website: Not Available | 
+                        <a href="https://www.google.com/maps/search/{{ college.college_name | urlencode }}+{{ college.city | urlencode }}" target="_blank">Map View</a>
+                    </p>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="no-data">
+        No colleges found for this district.
+    </div>
+    {% endif %}
+</main>
+
+<script>
+    // Search functionality
+    const searchInput = document.getElementById('collegeSearch');
+    const collegeCards = document.querySelectorAll('.college-card');
+
+    searchInput.addEventListener('keyup', function() {
+        const filter = this.value.toLowerCase();
+
+        collegeCards.forEach(card => {
+            const collegeName = card.querySelector('h3').textContent.toLowerCase();
+            card.style.display = collegeName.includes(filter) ? 'flex' : 'none';
+        });
+    });
+</script>
+
+</body>
+</html>

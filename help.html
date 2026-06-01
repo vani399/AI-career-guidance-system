@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Help & Support | Career Advisor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            background: #eef2f7; /* same as other pages */
+        }
+
+        header {
+            background: #3f51b5;
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .info-card {
+            background: #fff;
+            padding: 20px 18px;
+            border-left: 5px solid #2fb4c2; /* accent color */
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        /* Accordion */
+        .accordion {
+            background: #fff;
+            color: #333;
+            cursor: pointer;
+            padding: 15px 20px;
+            width: 100%;
+            text-align: left;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+            font-size: 16px;
+            transition: background 0.2s, box-shadow 0.2s;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+        .accordion:hover, .accordion.active {
+            background: #e1f5f8;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .panel {
+            background: #f9fafd;
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            border-left: 3px solid #2fb4c2;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            padding: 0 20px;
+        }
+
+        .panel p {
+            margin: 10px 0;
+        }
+
+        /* Form */
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px 12px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            outline: none;
+            background: #fff;
+            transition: border-color 0.2s;
+        }
+
+        .form-group textarea { resize: vertical; }
+
+        .form-group label {
+            position: absolute;
+            left: 12px;
+            top: 14px;
+            color: #999;
+            font-size: 14px;
+            pointer-events: none;
+            transition: all 0.2s ease-out;
+            background: #fff;
+            padding: 0 4px;
+        }
+
+        .form-group input:focus + label,
+        .form-group input:not(:placeholder-shown) + label,
+        .form-group textarea:focus + label,
+        .form-group textarea:not(:placeholder-shown) + label,
+        .form-group select:focus + label,
+        .form-group select:not([value=""]) + label {
+            top: -10px;
+            left: 8px;
+            font-size: 12px;
+            color: #2563eb;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 14px 25px;
+            background-color: #2fb4c2;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        button:hover {
+            background-color: #288697;
+            transform: translateY(-2px);
+        }
+
+        #success-msg {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+            color: #065f46;
+            font-weight: bold;
+        }
+
+        .footer-note {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Help & Support</h1>
+</header>
+
+<main>
+    <div class="info-card">
+        <p><strong>Support Email:</strong> careerhelp577@gmail.com</p>
+        <p><strong>Working Hours:</strong> Monday – Friday, 9:00 AM – 6:00 PM</p>
+        <p><strong>Response Time:</strong> Within 24–48 working hours</p>
+    </div>
+
+    <h2>Frequently Asked Questions</h2>
+    <button class="accordion">How does the career recommendation work?</button>
+    <div class="panel"><p>Our system analyzes your quiz responses, qualifications, and interests to recommend suitable career paths and courses.</p></div>
+
+    <button class="accordion">Is this platform free to use?</button>
+    <div class="panel"><p>Yes. The Career Advisor platform is completely free for students.</p></div>
+
+    <button class="accordion">Can I retake the quiz?</button>
+    <div class="panel"><p>Yes, you can retake the quiz anytime to explore different career options.</p></div>
+
+    <button class="accordion">Will my data be kept private?</button>
+    <div class="panel"><p>Your personal information is used only for providing recommendations and support and is not shared with third parties.</p></div>
+
+    <h2>Submit a Help Request</h2>
+    <form id="helpForm">
+        <div class="form-group">
+            <select name="category" id="category" required>
+                <option value="" disabled selected>Select a category</option>
+                <option value="career">Career Guidance</option>
+                <option value="technical">Technical Issue</option>
+                <option value="college">College Info</option>
+                <option value="other">Other</option>
+            </select>
+            <label for="category">Help Category</label>
+        </div>
+
+        <div class="form-group">
+            <input type="text" name="name" id="name" required placeholder=" ">
+            <label for="name">Full Name</label>
+        </div>
+
+        <div class="form-group">
+            <input type="email" name="email" id="email" required placeholder=" ">
+            <label for="email">Email Address</label>
+        </div>
+
+        <div class="form-group">
+            <input type="text" name="phone" id="phone" placeholder=" ">
+            <label for="phone">Phone Number (optional)</label>
+        </div>
+
+        <div class="form-group">
+            <textarea name="message" id="message" rows="5" required placeholder=" "></textarea>
+            <label for="message">Your Question / Issue</label>
+        </div>
+
+        <button type="submit">Submit Request</button>
+    </form>
+
+    <div id="success-msg">Thank you! Your message has been sent successfully.</div>
+    <p class="footer-note">By submitting this form, you agree to be contacted regarding your query.</p>
+</main>
+
+<script>
+    // Accordion
+    const accordions = document.getElementsByClassName("accordion");
+    for(let i=0;i<accordions.length;i++){
+        accordions[i].addEventListener("click",function(){
+            this.classList.toggle("active");
+            const panel=this.nextElementSibling;
+            if(panel.style.maxHeight){panel.style.maxHeight=null;}
+            else{panel.style.maxHeight=panel.scrollHeight+"px";}
+        });
+    }
+
+    // Form submit (dummy)
+    const form=document.getElementById('helpForm');
+    const successMsg=document.getElementById('success-msg');
+    form.addEventListener('submit',function(e){
+        e.preventDefault();
+        successMsg.style.display='block';
+        form.reset();
+        window.scrollTo({top:0,behavior:'smooth'});
+        setTimeout(()=>{successMsg.style.display='none';},7000);
+    });
+</script>
+
+</body>
+</html>

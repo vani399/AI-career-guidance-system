@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Career Aptitude Quiz</title>
+
+<style>
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: #eef2f7;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #3f51b5;
+    color: white;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+header h1 { 
+    margin: 0; 
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+header a.button {
+    background: #2fb4c2;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header a.button:hover {
+    background: #288697;
+}
+
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* SAME CARD STYLE AS SKILL PAGE */
+
+.course-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 15px;
+}
+
+.course-header {
+    padding: 18px 22px;
+    background: #2fb4c2;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.options {
+    padding: 15px 20px;
+    background: #f1f5fb;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.options label {
+    display: block;
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    color: #333;
+    background: #e1f5f8;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.options label:hover {
+    background: #d1ebf0;
+}
+
+input[type="radio"]{
+    margin-right:10px;
+}
+
+button {
+    display:block;
+    margin:30px auto;
+    padding:12px 25px;
+    background:#2fb4c2;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#288697;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h1>Career Aptitude Quiz</h1>
+    
+</header>
+
+<main>
+
+<h2>Answer the following questions</h2>
+
+<form method="POST">
+
+{% for q in questions %}
+
+<div class="course-card">
+
+<div class="course-header">
+{{ loop.index }}. {{ q[1] }}
+</div>
+
+<div class="options">
+
+<label>
+<input type="radio" name="answer_{{q[0]}}" value="5">
+Strongly Agree
+</label>
+
+
+<label>
+<input type="radio" name="answer_{{q[0]}}" value="4">
+Agree
+</label>
+
+
+<label>
+<input type="radio" name="answer_{{q[0]}}" value="3">
+Neutral
+</label>
+
+<label>
+<input type="radio" name="answer_{{q[0]}}" value="2">
+Disagree
+</label>
+
+<label>
+<input type="radio" name="answer_{{q[0]}}" value="1" required>
+Strongly Disagree
+</label>
+
+
+</div>
+
+</div>
+
+{% endfor %}
+
+<button type="submit">Submit Quiz</button>
+
+</form>
+
+</main>
+
+</body>
+</html>

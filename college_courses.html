@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College & Courses</title>
+</head>
+<body>
+
+<h2>College & Course List</h2>
+
+<table border="1" cellpadding="8">
+    <tr>
+        <th>College Name</th>
+        <th>Course Offered</th>
+    </tr>
+
+    {% for college, course in data %}
+    <tr>
+        <td>{{ college }}</td>
+        <td>{{ course }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

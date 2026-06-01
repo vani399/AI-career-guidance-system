@@ -1,0 +1,819 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    height: 100vh;
+}
+
+.hero {
+    background-image: url("../images/education_bg1.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.65);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    color: #fff;
+    text-align: center;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.content h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.tagline {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.feature {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 35px;
+    background-color: #00c853;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #00a843;
+}
+/* LOGIN PAGE STYLES */
+
+.login-container {
+    height: 100vh;
+    background: linear-gradient(to right, #1c92d2, #f2fcfe);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    background: #ffffff;
+    width: 380px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.login-box h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.login-subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    font-size: 14px;
+    color: #444;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: #1c92d2;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: #1c92d2;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background: #166fa6;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.register-link a {
+    color: #1c92d2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.error-msg {
+    background: #ffe6e6;
+    color: #d8000c;
+    padding: 8px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+/* REGISTER PAGE STYLES */
+
+.register-container {
+    height: 100vh;
+    background: linear-gradient(to right, #f7971e, #ffd200);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-box {
+    background: #ffffff;
+    width: 420px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.register-box h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.register-subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.register-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: #f7971e;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.register-btn:hover {
+    background: #e38916;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.login-link a {
+    color: #f7971e;
+    text-decoration: none;
+    font-weight: bold;
+}
+/* QUIZ PAGE STYLES */
+
+.quiz-container {
+    min-height: 100vh;
+    background: linear-gradient(to right, #8360c3, #2ebf91);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.quiz-box {
+    background: #fff;
+    width: 700px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.quiz-box h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.quiz-subtitle {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 25px;
+    color: #555;
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+.question p {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.question label {
+    display: block;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.quiz-btn {
+    width: 100%;
+    padding: 12px;
+    background: #2ebf91;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.quiz-btn:hover {
+    background: #26a77d;
+}
+/* NAVBAR STYLES */
+.navbar {
+    background: #ffffff;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 20px 15px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.08);
+}
+
+.nav-logo {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #3f51b5;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.nav-links-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* fill vertical space */
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex-grow: 1; /* links container grows */
+}
+
+.nav-links li {
+    flex: 1; /* each link stretches evenly */
+}
+
+.nav-links li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #333;
+    padding: 0; /* remove extra padding */
+    border-radius: 12px;
+    transition: background 0.3s, color 0.3s;
+    height: 100%; /* fill the li height */
+}
+
+.nav-links li a:hover {
+    background: #80cbc4;
+    color: #fff;
+}
+
+.nav-links li a.logout {
+    flex: none;
+    margin-top: 10px;
+    background: #ff8a65;
+    color: #fff;
+}
+
+.nav-links li a.logout:hover {
+    background: #ff7043;
+}
+
+/* DASHBOARD CONTENT */
+
+.dashboard-main {
+    padding: 40px;
+    background: #f4f6f9;
+    min-height: calc(100vh - 70px);
+}
+
+.dashboard-main h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.dashboard-desc {
+    text-align: center;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.usage-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.usage-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.usage-card:hover {
+    transform: translateY(-5px);
+}
+
+.usage-card h3 {
+    margin-bottom: 10px;
+    color: #1c92d2;
+}
+/* COURSE RECOMMENDATION PAGE */
+
+.recommend-container {
+    padding: 40px;
+    background: #f4f6f9;
+    min-height: calc(100vh - 70px);
+}
+
+.recommend-container h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.recommend-subtitle {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.course-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.course-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.course-card h3 {
+    color: #1c92d2;
+    margin-bottom: 10px;
+}
+
+.next-actions {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.action-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 10px;
+    background: #1c92d2;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+}
+
+.action-btn.secondary {
+    background: #2ebf91;
+}
+/* NEARBY COLLEGE PAGE */
+
+.college-container {
+    padding: 40px;
+    background: #f4f6f9;
+    min-height: calc(100vh - 70px);
+}
+
+.college-container h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.college-subtitle {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.college-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.college-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.college-card h3 {
+    color: #1c92d2;
+    margin-bottom: 10px;
+}
+
+.no-data {
+    text-align: center;
+    color: #d32f2f;
+    margin-top: 20px;
+}
+/* SKILL GUIDANCE PAGE */
+
+.skills-container {
+    padding: 40px;
+    background: #f4f6f9;
+    min-height: calc(100vh - 70px);
+}
+
+.skills-container h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.skills-subtitle {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.skill-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.skill-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    background: #e3f2fd;
+}
+/* HELP & SUPPORT PAGE */
+
+.help-container {
+    padding: 40px;
+    background: #f4f6f9;
+    min-height: calc(100vh - 70px);
+    max-width: 1000px;
+    margin: auto;
+}
+
+.help-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.help-section {
+    background: #ffffff;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.help-section h3 {
+    color: #1c92d2;
+    margin-bottom: 10px;
+}
+
+.help-section p {
+    color: #444;
+    line-height: 1.6;
+}
+
+/* ---------------- HELP & SUPPORT FORM ---------------- */
+
+.help-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.help-section {
+    background: #ffffff;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.help-section h3 {
+    margin-bottom: 12px;
+    color: #333;
+}
+
+/* FORM STYLES */
+.help-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.help-section input,
+.help-section textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+.help-section input:focus,
+.help-section textarea:focus {
+    border-color: #4f46e5;
+}
+
+/* SUBMIT BUTTON */
+.help-section button {
+    width: 150px;
+    padding: 10px;
+    background-color: #4f46e5;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.help-section button:hover {
+    background-color: #3730a3;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .help-container {
+        padding: 15px;
+    }
+
+    .help-section button {
+        width: 100%;
+    }
+}
+/* REMOVE LINK DEFAULT STYLE FOR DASHBOARD CARDS */
+.usage-cards a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* CARD HOVER UI FEEL */
+.usage-card {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.usage-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+/* SKILL CARD CLICK */
+.skill-card {
+    cursor: pointer;
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 25px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.platform-list {
+    margin-top: 15px;
+    padding-left: 18px;
+}
+
+.platform-list li {
+    margin-bottom: 8px;
+}
+<div class="info-card light">
+    <h4 class="why-title">Why these courses?</h4>
+
+    <p class="spaced-text">
+        Commerce courses develop business knowledge, financial skills,
+        management ability, and entrepreneurship.
+    </p>
+
+    <p class="spaced-text">
+        {{ why_text }}
+    </p>
+</div>
+
+/* ================= COURSE SECTION ================= */
+.course-section {
+    margin-top: 40px;   /* space between courses */
+}
+
+/* ================= COURSE TITLE ================= */
+.course-title {
+    margin-bottom: 22px;   /* 👈 KEY GAP */
+    padding: 14px 18px;
+
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+
+    color: #1f2937;
+    background: #f5f7fb;
+
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+}
+
+/* ================= PLATFORM LINKS ================= */
+.platform-list li a {
+    color: #4f46e5;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.platform-list li a:hover {
+    text-decoration: underline;
+}
+
+<style>
+    .hero {
+        position: relative;
+        height: 100vh;
+        /* Background image */
+        background: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    /* Create blurred background layer */
+    .hero::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: inherit; /* same image as hero */
+        background-size: cover;
+        background-position: center;
+        filter: blur(5px); /* adjust blur amount */
+        z-index: 0;
+    }
+
+    .overlay {
+        position: relative; /* on top of blur */
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        background: rgba(20, 16, 16, 0.35); /* semi-transparent dark overlay */
+    }
+
+    <style>
+.content {
+    text-align: center;
+    color: #ffffff; /* bright white text */
+    max-width: 800px;
+    animation: fadeInUp 1s ease-out;
+    z-index: 2;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.6); /* subtle shadow for clarity */
+}
+
+.content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 3px 3px 8px rgba(0,0,0,0.6); /* make heading pop */
+}
+
+.content .tagline {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #f9f9f9; /* slightly off-white for softer look */
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+</style>
+
+.btn{
+padding:8px 15px;
+background:#4CAF50;
+color:white;
+text-decoration:none;
+border-radius:5px;
+margin-right:5px;
+}
+
+.btn:hover{
+background:#2ecc71;
+}

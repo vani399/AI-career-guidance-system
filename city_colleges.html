@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Colleges in Tamil Nadu – City Directory</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body{
+font-family:'Poppins', Arial, sans-serif;
+background:#eef2f7;
+margin:0;
+padding:0;
+}
+
+/* HEADER */
+
+header{
+background:#3f51b5;
+color:white;
+padding:20px 30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+header h1{
+margin:0;
+font-size:2rem;
+font-weight:700;
+}
+
+header a.button{
+background:#2fb4c2;
+color:white;
+padding:10px 18px;
+border-radius:6px;
+text-decoration:none;
+font-weight:bold;
+}
+
+header a.button:hover{
+background:#288697;
+}
+
+/* PAGE CONTAINER */
+
+.container{
+max-width:900px;
+margin:40px auto;
+padding:20px;
+}
+
+/* PAGE HEADER */
+
+.page-header{
+text-align:center;
+margin-bottom:30px;
+}
+
+.page-header h2{
+font-size:2rem;
+color:#222;
+margin-bottom:8px;
+}
+
+.page-header p{
+font-size:0.95rem;
+color:#555;
+}
+
+/* INFO NOTE */
+
+.info-note{
+text-align:center;
+margin-bottom:28px;
+font-size:0.9rem;
+color:#374151;
+background:#eef2ff;
+padding:10px 14px;
+border-radius:8px;
+}
+
+/* COLLEGE LIST */
+
+.college-list{
+display:flex;
+flex-direction:column;
+gap:16px;
+}
+
+.college-card{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#fff;
+border-radius:10px;
+padding:18px 22px;
+box-shadow:0 4px 12px rgba(0,0,0,0.06);
+transition:transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.college-card:hover{
+transform:translateY(-2px);
+box-shadow:0 6px 16px rgba(0,0,0,0.08);
+}
+
+.college-info h3{
+margin:0;
+font-size:1.2rem;
+font-weight:600;
+color:#1f2937;
+}
+
+.college-info p{
+margin:6px 0 0;
+font-size:0.88rem;
+color:#6b7280;
+}
+
+.college-actions a{
+display:inline-block;
+background:#2fb4c2;
+color:#fff;
+padding:10px 18px;
+border-radius:8px;
+text-decoration:none;
+font-size:0.9rem;
+transition:background 0.2s;
+}
+
+.college-actions a:hover{
+background:#288697;
+}
+
+/* MOBILE */
+
+@media (max-width:600px){
+
+.college-card{
+flex-direction:column;
+align-items:flex-start;
+gap:12px;
+}
+
+.college-actions a{
+width:100%;
+text-align:center;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>College Directory</h1>
+<a href="/dashboard" class="button">Dashboard</a>
+</header>
+
+<div class="container">
+
+<div class="page-header">
+<h2>Colleges in Tamil Nadu – City Directory</h2>
+<p>Browse and download college & course details city-wise across Tamil Nadu</p>
+</div>
+
+<div class="info-note">
+📌 <strong>All Available Cities Listed Below</strong>
+</div>
+
+<div class="college-list">
+
+{% for city in cities %}
+
+<div class="college-card">
+
+<div class="college-info">
+<h3>{{ city.name }}</h3>
+<p>Colleges and courses available in {{ city.name }}</p>
+</div>
+
+<div class="college-actions">
+<a href="{{ url_for('download_csv', filename=city.file) }}">
+Download CSV
+</a>
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+</body>
+</html>
